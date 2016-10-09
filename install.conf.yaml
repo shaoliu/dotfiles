@@ -1,73 +1,76 @@
-
+- defaults:
+  link:
+    create: true
+    relink: true
+    relative: true
 
 - clean: ['~']
 
 - link:
+  ~/.agignore: .agignore
+  ~/.ackrc: .ackrc
 
-    ~/.agignore: .agignore
-    ~/.ackrc: .ackrc
+  ~/.emacs.d: .emacs.d
 
-    ~/.emacs.d: .emacs.d
+  # Ruby things
+  ~/.gemrc: .gemrc
 
-    # Ruby things
-    ~/.gemrc: .gemrc
+  # It's fuzzy and it finds files
+  ~/.fzf: .fzf
 
-    # It's fuzzy and it finds files
-    ~/.fzf: .fzf
+  # Why is this here?
+  ~/.dotfiles: ''
 
-    # Why is this here?
-    ~/.dotfiles: ''
+  ~/.gitconfig: .gitconfig
+  ~/.gitignore_global: .gitignore_global
 
-    ~/.gitconfig: .gitconfig
-    ~/.gitignore_global: .gitignore_global
+  # In case I ever use gvim again
+  ~/.gvimrc: .gvimrc
 
-    # In case I ever use gvim again
-    ~/.gvimrc: .gvimrc
+  # lol mercurial
+  ~/.hgrc: .hgrc
 
-    # lol mercurial
-    ~/.hgrc: .hgrc
+  # Linting is good. even if it's JS
+  ~/.jsl.conf: .jsl.conf
 
-    # Linting is good. even if it's JS
-    ~/.jsl.conf: .jsl.conf
+  # Chat like it's the 1980s
+  ~/.weechat: .weechat
 
-    # Chat like it's the 1980s
-    ~/.weechat: .weechat
+  # TMUXXXX
+  # Directory where plugins get installed
+  ~/.tmux: .tmux
+  # Base configuration file
+  ~/.tmux.conf: .tmux.conf
+  # I wish there was a way to only link this on darwin.
+  # See https://github.com/anishathalye/dotbot/issues/57
+  # Doesn't seem to be happening any time soon
+  ~/.tmux-osx.conf: .tmux-osx.conf
 
-    # TMUXXXX
-    # Directory where plugins get installed
-    ~/.tmux: .tmux
-    # Base configuration file
-    ~/.tmux.conf: .tmux.conf
-    # I wish there was a way to only link this on darwin.
-    # See https://github.com/anishathalye/dotbot/issues/57
-    # Doesn't seem to be happening any time soon
-    ~/.tmux-osx.conf: .tmux-osx.conf
+  ~/.vim: .vim
+  ~/.vimrc: .vimrc
 
-    ~/.vim: .vim
-    ~/.vimrc: .vimrc
+  # Zsh things
+  ~/.zprezto: .zprezto
+  ~/.zshrc: .zshrc
+  ~/.zpreztorc: .zpreztorc
 
-    # Zsh things
-    ~/.zprezto: .zprezto
-    ~/.zshrc: .zshrc
-    ~/.zpreztorc: .zpreztorc
+  # Tools that make git prettier
+  ~/bin/diff-highlight:
+    path: bin/diff-highlight
+  ~/bin/diff-so-fancy:
+    path: bin/diff-so-fancy
 
-    # Tools that make git prettier
-    ~/bin/diff-highlight:
-      path: bin/diff-highlight
-    ~/bin/diff-so-fancy:
-      path: bin/diff-so-fancy
+  ~/bin/tmux-colours:
+    path: bin/tmux-colours
 
-    ~/bin/tmux-colours:
-      path: bin/tmux-colours
+  ~/bin/git-count-by-author:
+    path: bin/git-count-by-author
+  ~/bin/git-gsub:
+    path: bin/git-gsub
 
-    ~/bin/git-count-by-author:
-      path: bin/git-count-by-author
-    ~/bin/git-gsub:
-      path: bin/git-gsub
-
-    # Clojure compiler
-    ~/bin/lein:
-      path: bin/lein
+  # Clojure compiler
+  ~/bin/lein:
+    path: bin/lein
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
@@ -83,7 +86,3 @@
   - tmux
   - wget
   - zsh
-
-- defaults:
-  link:
-    create: true
